@@ -1,0 +1,17 @@
+less crimescene | grep CLUE > clues.txt
+less people | grep "Annabel" | grep $'\t'F$'\t' > possible_witnesses.txt
+find ./streets/*Hart* -exec sed -n '40p' {} \; >> searched_lines.txt
+find ./streets/*Buckingham* -exec sed -n '179p' {} \; >> searched_lines.txt
+less ./interviews/*47246024* ./interviews/*699607* > interview_info.txt
+less vehicles | grep -A 6 "L337.*9" | tail -n +1 | grep -A 5 "Honda" | grep -A 4 "Blue" | grep -C 1 "Height.*6'" > suspects.txt
+
+less memberships/AAA memberships/Delta_SkyMiles memberships/Terminal_City_Library memberships/Museum_of_Bash_History > suspicious_memberships
+mkdigitals@mkdigitals-pc20:/media/mkdigitals/d/cyprusCodes/module_1/homework/cli-mystery/mystery$ less suspicious_memberships | grep "Joe Germuska" | wc --lines
+2
+mkdigitals@mkdigitals-pc20:/media/mkdigitals/d/cyprusCodes/module_1/homework/cli-mystery/mystery$ less suspicious_memberships | grep "Erika Owens" | wc --lines
+0
+mkdigitals@mkdigitals-pc20:/media/mkdigitals/d/cyprusCodes/module_1/homework/cli-mystery/mystery$ less suspicious_memberships | grep "Jeremy Bowers" | wc --lines
+4
+mkdigitals@mkdigitals-pc20:/media/mkdigitals/d/cyprusCodes/module_1/homework/cli-mystery/mystery$ less suspicious_memberships | grep "Jacqui Maher" | wc --lines
+3
+sudo sh -c 'echo "Jeremy Bowers" > jail.txt'
